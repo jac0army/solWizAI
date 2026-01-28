@@ -1,6 +1,16 @@
-<img width="783" height="711" alt="image" src="https://github.com/user-attachments/assets/c2a7f019-d3cc-465b-b7a4-eece07788e1e" /># solWizAI
-Sol without wallets
-![Uploading image.png…]()
+<img width="783" height="711" alt="image" src="https://github.com/user-attachments/assets/c2a7f019-d3cc-465b-b7a4-eece07788e1e" /># 
+
+
+## Implementation Guide
+
+### Environment Setup
+1. Clone the repository: `git clone https://github.com/your-username/sol-wiz-ai`
+2. Install dependencies: `npm install`
+3. Configure your `.env` file:
+   ```env
+   SOLANA_RPC_URL=[https://api.mainnet-beta.solana.com](https://api.mainnet-beta.solana.com)
+   WIZ_PRIVATE_KEY=[your_base58_or_byte_array]
+   TWITTER_BEARER_TOKEN=your_token_here
 
 
 WizAI Migration: ETH to SOL
