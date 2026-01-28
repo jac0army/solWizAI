@@ -1,0 +1,45 @@
+use anchor_lang::prelude::*;
+
+declare_id!("Wiz11111111111111111111111111111111111111");
+
+#[program]
+pub mod sol_wiz_ai {
+    use super::*;
+
+    pub fn initialize_wiz(ctx: Context<InitializeWiz>) -> Result<()> {
+        let wiz_stats = &mut ctx.accounts.wiz_stats;
+        wiz_stats.admin = *ctx.accounts.admin.key;
+        wiz_stats.total_spells_cast = 0;
+        Ok(())
+    }
+
+    pub fn cast_spell(ctx: Context<CastSpell>, spell_id: u64) -> Result<()> {
+        let wiz_stats = &mut ctx.accounts.wiz_stats;
+        wiz_stats.total_spells_cast += 1;
+        
+        msg!("WizAI: Spell {} cast successfully on Solana!", spell_id);
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct InitializeWiz<'info> {
+    #[account(init, payer = admin, space = 8 + 32 + 8)]
+    pub wiz_stats: Account<'info, WizStats>,
+    #[account(mut)]
+    pub admin: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+pub struct CastSpell<'info> {
+    #[account(mut)]
+    pub wiz_stats: Account<'info, WizStats>,
+    pub caster: Signer<'info>,
+}
+
+#[account]
+pub struct WizStats {
+    pub admin: Pubkey,
+    pub total_spells_cast: u64,
+}
