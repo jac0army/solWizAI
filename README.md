@@ -37,3 +37,5 @@ Status: Porting core logic and optimizing for the BPF (Berkeley Packet Filter) b
 
 Vision and Implementation
 WizAI on Solana is not a mere fork. It is a re-engineering of the original success on Ethereum, designed to leverage the high-performance capabilities of the Solana cluster. The goal is to provide the same utility that dominated the ETH space but with the speed and scalability required for the next generation of decentralized applications
+
+## Donations: F11XY13NagySTUv4LXNmTVsfwpJ1yBL28f94QPKCta2r 
